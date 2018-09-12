@@ -1,0 +1,9 @@
+<h1>Trollo</h1>
+<h2>Boards</h2>
+<% @boards.each do |board| %>
+  <%= link_to board.name, board %>
+  <%= link_to "edit", edit_board_path(board) %>
+  <% end %>
+  <%= link_to "new", new_board_path %>
+
+

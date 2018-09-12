@@ -1,0 +1,6 @@
+<h1><%= @task.id ? 'Edit Task' : 'Create Task' %></h1>
+<hr />
+<%= form_for [@list, @task] do |f| %>
+  <%= f.text_field :description, required: true, autofocus: true %>
+  <%= f.submit %>
+  <% end %>

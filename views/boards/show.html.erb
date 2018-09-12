@@ -1,0 +1,18 @@
+<h1><%= @board.name %></h1>
+<%= link_to "new", new_board_list_path(@board.id) %>
+
+<ul><% @board.lists.each do |list| %>
+  <li><%= list.name %>
+  <%= link_to "New Task", new_list_task_path(list.id) %>
+    <ol><% list.tasks.each do |task| %>
+      <li><%= task.description %></li>
+  <%= link_to "Delete", list_task_path(task.list_id, task.id), method: :delete%>
+      
+      <% end %>
+    </ol>
+  
+  </li>
+  <%= link_to "edit", edit_board_list_path([@board, list]) %>
+
+  <% end %>
+</ul>
